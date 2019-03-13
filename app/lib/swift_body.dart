@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:swift/swift_threads.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 class SwiftBody extends StatelessWidget {
@@ -19,24 +18,26 @@ class SwiftBody extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween, //change this???
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
+                  Material(
+                    borderRadius: BorderRadius.circular(24.0),
+                    child: Center(
+                      child: Padding(
+                        padding: EdgeInsets.all(0.0),
+                        child: ClipRRect(
+                          borderRadius: new BorderRadius.circular(24.0),
+                          child: Image.asset('assets/images/default.jpeg'),
+                        )
+                      ),
+                    ),
+                  ),
                   Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget>[
-                      Text("Total Views", style: TextStyle(color: Colors.blueAccent)),
-                      Text("200K", style: TextStyle(color: Colors.black)),
+                      Text("Deal with Acme Co.", style: TextStyle(color: Colors.black, fontSize: 24.0)),
+                      Text("Jane Doe and Bob Smith", style: TextStyle(color: Colors.grey, fontSize: 12.0)),
                     ],
                   ),
-                  Material(
-                    color: Colors.blueAccent,
-                    borderRadius: BorderRadius.circular(24.0),
-                    child: Center(
-                      child: Padding(
-                        padding: EdgeInsets.all(16.0),
-                        child: Icon(Icons.timeline, color: Colors.white, size: 30.0,),
-                      ),
-                    ),
-                  )
                 ],
               ),
             ),
@@ -45,31 +46,35 @@ class SwiftBody extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(24.0),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween, //change this???
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
+                  Material(
+                    borderRadius: BorderRadius.circular(24.0),
+                    child: Center(
+                      child: Padding(
+                        padding: EdgeInsets.all(0.0),
+                        child: ClipRRect(
+                          borderRadius: new BorderRadius.circular(24.0),
+                          child: Image.asset('assets/images/default.jpeg'),
+                        )
+                      ),
+                    ),
+                  ),
                   Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget>[
-                      Text("Shop Items", style: TextStyle(color: Colors.red),),
-                      Text("173", style: TextStyle(color: Colors.black54),)
+                      Text("Deal with Acme Co.", style: TextStyle(color: Colors.black, fontSize: 24.0)),
+                      Text("Jane Doe and Bob Smith", style: TextStyle(color: Colors.grey, fontSize: 12.0)),
                     ],
-                  ),
-                  Material(
-                    color: Colors.red,
-                    borderRadius: BorderRadius.circular(24.0),
-                    child: Center(
-                      child: Padding(
-                        padding: EdgeInsets.all(16.0),
-                        child: Icon(Icons.store, color: Colors.white, size: 30),
-                      ),
-                    ),
                   ),
                 ],
               ),
             ),
-            onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => ShopItemsPage()))
+            onTap: () {
+              return null;
+            }
           ),
         ],
         staggeredTiles: [
