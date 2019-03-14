@@ -6,9 +6,16 @@ Future<Null> main() async {
   runApp(new SwiftApp());
 }
 
+class SwiftApp extends StatefulWidget {
+  State<StatefulWidget> createState() {
+    return _SwiftAppState();
+  }
+}
 
 
-class SwiftApp extends StatelessWidget {
+
+
+class _SwiftAppState extends State<SwiftApp> {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
