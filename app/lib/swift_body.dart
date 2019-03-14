@@ -22,7 +22,7 @@ class _SwiftBodyState extends State<SwiftBody> {
           _threadTile("Acme Company Purchase", "Ceo Man")
         ],
         staggeredTiles: [
-          StaggeredTile.extent(2, 110.0),
+          StaggeredTile.extent(2,110.0),
           StaggeredTile.extent(2, 110.0),
           StaggeredTile.extent(1, 180.0),
           StaggeredTile.extent(2, 220.0),
@@ -33,17 +33,6 @@ class _SwiftBodyState extends State<SwiftBody> {
   }
 }
 
-Widget _buildTile(Widget child, {Function() onTap}) {
-  return Material(
-    elevation: 14.0,
-    borderRadius: BorderRadius.circular(12.0),
-    shadowColor: Colors.black26,
-    child: InkWell(
-      onTap: onTap != null ? () => onTap() : () { print("Not seen yet");},
-      child: child,
-    ),
-  );
-}
 
 Widget _threadTile(String threadTitle, String contactName, {Function() onTap}) {
   return Material(
@@ -58,22 +47,10 @@ Widget _threadTile(String threadTitle, String contactName, {Function() onTap}) {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween, //change this???
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
-                  Material(
-                    borderRadius: BorderRadius.circular(24.0),
-                    child: Center(
-                      child: Container(
-                        margin: EdgeInsets.all(12.0),
-                        child: ClipRRect(
-                          borderRadius: new BorderRadius.circular(24.0),
-                          child: Image.asset('assets/images/default.jpeg'),
-                        )
-                      ),
-                    ),
-                  ),
                   new Flexible(
                     child:Column(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.end,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         Text(
                           threadTitle, 
@@ -81,10 +58,22 @@ Widget _threadTile(String threadTitle, String contactName, {Function() onTap}) {
                           overflow: TextOverflow.clip,
                           softWrap: false,
                         ),
-                        Text(contactName, style: TextStyle(color: Colors.grey, fontSize: 12.0)),
+                        Padding(
+                          padding:EdgeInsets.only(top: 8.0),
+                          child: Row(
+                          children: <Widget>[
+                            Icon(Icons.calendar_today),
+                            Text("Last Messaged 3 Days Ago")
+                          ],
+                        ),
+                        ),
                     ],
                   ),
                   ),
+                  Column(children: <Widget>[
+                    Icon(Icons.star_border),
+                    Icon(Icons.arrow_drop_down),
+                  ],)
                 ],
               ),
             ),
