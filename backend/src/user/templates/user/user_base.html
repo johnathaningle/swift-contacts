@@ -14,17 +14,16 @@
   <body style="background: #eee;">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-      <a class="navbar-brand" href="{% url 'dashboard'%}">Swift Contacts</a>
+      <a class="navbar-brand" href="#">Swift Contacts</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
         aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto">
-          <a class="nav-item nav-link" href="{% url 'dashboard' %}"">Home<span class="sr-only">(current)</span></a>
           
           {% if user.is_authenticated %}
-          <a class="nav-item nav-link" href="{% url 'account' %}">Account</a>
+          <a class="nav-item nav-link" href="#">Account</a>
           <a class="nav-item nav-link text-light" href="{% url 'logout' %}">Logout</a>
           {% else %}
           <a class="nav-item nav-link" href="#">Features</a>
