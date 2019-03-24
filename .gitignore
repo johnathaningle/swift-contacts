@@ -1,3 +1,5 @@
 /backend/auth.json
 *.pyc
 
+node-backend/node_modules
+credentials.json
