@@ -1,20 +1,18 @@
 <template>
   <div class="app">
     <nav-component></nav-component>
-    <login-form></login-form>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
 import Nav from "./components/Nav.vue"
-import LoginForm from './components/LoginForm.vue'
+import WelcomeForm from "./components/WelcomeForm.vue"
 
 export default {
   name: "app",
   components: {
     NavComponent: Nav,
-    LoginForm: LoginForm,
   },
 }
 </script>

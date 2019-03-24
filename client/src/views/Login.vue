@@ -1,15 +1,14 @@
 <template>
-    <div>
-        <nav-component></nav-component>
+    <div class="login">
         <login-form></login-form>
     </div>
 </template>
 
 <script>
+import LoginForm from '../components/LoginForm'
     export default {
         name: "login",
         components: {
-            NavComponent: Nav,
             LoginForm: LoginForm,
         },
     }
