@@ -1,16 +1,15 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-  </div>
+  <welcome-form></welcome-form>
 </template>
 
 <script>
 // @ is an alias to /src
+import WelcomeForm from "../components/WelcomeForm"
 
 export default {
   name: 'home',
   components: {
-    
+    WelcomeForm: WelcomeForm,
   }
 }
 </script>
