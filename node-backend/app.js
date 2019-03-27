@@ -8,7 +8,6 @@ const cors = require("cors");
 
 //create the app
 const app = express();
-
 //dynmaically assign the port
 const port = process.env.port || 5000;
 
