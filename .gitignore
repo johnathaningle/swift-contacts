@@ -4,3 +4,5 @@
 node-backend/node_modules
 credentials.json
 dblogin.txt
+node-backend/config/credentials.json
+node-backend/config/keys.js
