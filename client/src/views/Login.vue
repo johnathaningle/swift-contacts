@@ -1,43 +1,51 @@
 <template>
-    <div class="login">
-        <login-form></login-form>
+    <div>
+        <authentication-form :formTitle="name">
+            <div slot="fields">
+                <div class="form-group">
+                    <p>Email</p>
+                    <input type="email" class="form-input" v-model="email">
+                </div>
+                <div class="form-group">
+                    <p>Password</p>
+                    <input type="password" class="form control form-input" v-model="password">
+                </div>
+                <div class="form-group remember">
+                    <p>Remember Me</p>
+                    <input type="checkbox" class="form-input checkmark">
+                </div>
+                <hr>
+                <button class="btn btn-primary btn-block mb-4" @click="submitForm">Login</button>
+            </div>
+
+            <p id="new-account" slot="form-link">Need an account? <router-link to="/register">Register</router-link>
+            </p>
+        </authentication-form>
     </div>
 </template>
 
 <script>
-import LoginForm from '../components/LoginForm'
+    import AuthenticationForm from "../components/AuthenticationForm.vue";
     export default {
-        name: "login",
         components: {
-            LoginForm: LoginForm,
+            AuthenticationForm,
+        },
+        data() {
+            return {
+                name: "Login",
+                email: "",
+                password: "",
+            }
+        },
+        methods: {
+            submitForm() {
+                console.log(this.email);
+                console.log(this.password);
+            }
         },
     }
 </script>
 
 <style lang="scss">
-    html,
-    body {
-        width: 100%;
-        height: 100%;
-        width: 100%;
-        height: 100%;
-        font-size: 17px;
-        font-family: "Lato", Helvetica, sans-serif;
-        -webkit-font-smoothing: antialiased;
-        color: #555459;
-        overflow: hidden;
-        background: #f8f8f8;
-    }
 
-    nav {
-        background: #fff;
-        height: 60px;
-        display: flex;
-        flex-direction: row;
-        align-content: center;
-        align-items: center;
-        -webkit-box-shadow: 0px 1px 5px #b9b9b9;
-        -moz-box-shadow: 0px 1px 5px #b9b9b9;
-        box-shadow: 0px 1px 5px #b9b9b9;
-    }
 </style>

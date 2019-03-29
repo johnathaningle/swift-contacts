@@ -1,24 +1,10 @@
 <template>
     <main>
         <div class="login-form">
-            <h3>Login</h3>
-            <form action="">
-                <div class="form-group">
-                    <p>Email</p>
-                    <input type="email" class="form-input">
-                </div>
-                <div class="form-group">
-                    <p>Password</p>
-                    <input type="password" class="form control form-input">
-                </div>
-                
-                <div class="form-group remember">
-                    <p>Remember Me</p>
-                    <input type="checkbox" class="form-input checkmark">
-                </div>
-                <hr>
-                <button class="btn btn-primary btn-block mb-4">Login</button>
-                <p id="new-account">Need an account? <router-link to="/register">Register</router-link></p>
+            <h3>{{ formTitle }}</h3>
+            <form v-on:submit.prevent="">
+                <slot name="fields"></slot>
+                <slot name="form-link"></slot>
             </form>
         </div>
     </main>
@@ -26,7 +12,7 @@
 
 <script>
 export default {
-    
+    props: ["formTitle"],
 }
 </script>
 

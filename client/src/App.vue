@@ -7,7 +7,6 @@
 
 <script>
 import Nav from "./components/Nav.vue"
-import WelcomeForm from "./components/WelcomeForm.vue"
 
 export default {
   name: "app",

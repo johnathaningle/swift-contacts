@@ -1,7 +1,7 @@
 <template>
     <main>
         <div class="login-form">
-            <h3 class="text-center mb-4">Welcome to Flack</h3>
+            <h3 class="text-center mb-4">Welcome to Swift Contacts</h3>
             <a href="/login" class="btn btn-success btn-block">Login</a>
             <a href="/register" class="btn btn-info btn-block">Register</a>
         </div>

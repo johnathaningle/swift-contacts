@@ -2,7 +2,7 @@
     <div>
         <nav>
             <img src="../assets/icon.png" alt="">
-            <h1>Welcome to Flack</h1>
+            <h1>Welcome to Swift Contacts</h1>
         </nav>
     </div>
 </template>
