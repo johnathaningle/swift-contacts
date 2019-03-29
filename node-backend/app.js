@@ -7,7 +7,8 @@ const nodemailer = require('nodemailer');
 const cors = require("cors");
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
-const Sequelize = require('sequelize');
+const {sequelize} = require('./models');
+
 
 //create the app
 const app = express();
@@ -25,14 +26,9 @@ app.use(bodyParser.json());
 app.use('/', require('./routes/index'));
 app.use('/account/', require('./routes/users'));
 
-//database setup
-const sequelize = new Sequelize("mysql://johnathaningle:P@$$w0rd@localhost:3306/swift_contacts");
 
-sequelize.authenticate().then(() => {
-    console.log("connection established");
-}).catch(err => {
-    console.log("couldnt connect to the database");
-});
+
+
 
 //Run the web server
 app.listen(port, () => {
