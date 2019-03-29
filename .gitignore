@@ -7,3 +7,5 @@ dblogin.txt
 node-backend/config/credentials.json
 node-backend/config/keys.js
 node-backend/token.json
+
+tests
