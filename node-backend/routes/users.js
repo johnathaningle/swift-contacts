@@ -4,13 +4,14 @@ const keys = require('../config/keys');
 const {google} = require('googleapis');
 const readline = require('readline');
 const fs = require('fs');
+const AuthenticationController = require('../controllers/AuthenticationController');
 
 module.exports = router;
 
-router.get('/login/', (req, res) => {
-    res.send('this is the login route');
+router.post('/login', (req, res) => {
+    AuthenticationController.login(req, res);
 });
 
-router.get('/register/', (req, res) => {
-    res.send('register page');
+router.post('/register', (req, res) => {
+    AuthenticationController.register(req, res);
 })
