@@ -9,3 +9,4 @@ node-backend/config/keys.js
 node-backend/token.json
 
 tests
+*.json

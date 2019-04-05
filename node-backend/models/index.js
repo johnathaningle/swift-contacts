@@ -1,25 +1,47 @@
-const Sequelize = require('sequelize');
+'use strict';
+
 const fs = require('fs');
 const path = require('path');
+const Sequelize = require('sequelize');
+const basename = path.basename(__filename);
+const env = process.env.NODE_ENV || 'development';
+const config = require('../config/keys');
 const db = {};
 
-//database setup
-const sequelize = new Sequelize("mysql://johnathaningle:P@$$w0rd@localhost:3306/swift_contacts");
+let sequelize;
+console.log("Initializing database...");
+if (config.use_env_variable) {
+  sequelize = new Sequelize(process.env[config.use_env_variable], config);
+} else {
 
-//test the connection
-sequelize.authenticate().then(() => {
-    console.log("connection established");
-}).catch(err => {
-    console.log("couldnt connect to the database");
-});
+  sequelize = new Sequelize(config.development.database, config.development.username, config.development.password,{
+    host: config.development.host,
+    dialect: config.development.dialect
+  });
+  sequelize.authenticate().then(() => {
+    console.log("Connection established in developemnt");
+  }).catch(err => {
+    console.log("Error connecting to db during developemnt");
+  });
+}
 
-fs.readdirSync(__dirname).filter((file) => file !== 'index.js').forEach((file) => {
-    const model = sequelize.import(path.join(__dirname, file));
+fs
+  .readdirSync(__dirname)
+  .filter(file => {
+    return (file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-3) === '.js');
+  })
+  .forEach(file => {
+    const model = sequelize['import'](path.join(__dirname, file));
     db[model.name] = model;
+  });
+
+Object.keys(db).forEach(modelName => {
+  if (db[modelName].associate) {
+    db[modelName].associate(db);
+  }
 });
 
-Object.keys(db).forEach((modelName) => {
-    if('associate' in db[modelName]) {
-        db[modelName].associate(db);
-    }
-});
+db.sequelize = sequelize;
+db.Sequelize = Sequelize;
+
+module.exports = db;

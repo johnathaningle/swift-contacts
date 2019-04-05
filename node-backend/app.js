@@ -7,11 +7,11 @@ const nodemailer = require('nodemailer');
 const cors = require("cors");
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
-const {sequelize} = require('./models');
-
+const sequelize = require('./models');
 
 //create the app
 const app = express();
+
 //dynmaically assign the port
 const port = process.env.port || 5000;
 
@@ -24,11 +24,7 @@ app.use(bodyParser.json());
 
 //Routes for the web API
 app.use('/', require('./routes/index'));
-app.use('/account/', require('./routes/users'));
-
-
-
-
+app.use('/user/', require('./routes/user'));
 
 //Run the web server
 app.listen(port, () => {

@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
+    "start": "nodemon app.js",
     "dev": "nodemon app.js"
   },
   "keywords": [],
@@ -28,6 +28,8 @@
     "npm": "^6.9.0",
     "passport": "^0.4.0",
     "passport-google-oauth": "^2.0.0",
+    "pg": "^7.9.0",
+    "pg-hstore": "^2.3.2",
     "sequelize": "^5.2.6"
   }
 }
