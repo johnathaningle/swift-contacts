@@ -1,7 +1,7 @@
 <template>
     <div>
         <nav>
-            <img src="../assets/icon.png" alt="">
+            <img src="@/assets/icon.png" alt="">
             <h1>Welcome to Swift Contacts</h1>
         </nav>
     </div>
@@ -9,7 +9,7 @@
 
 <script>
     export default {
-
+        name: "Nav"
     }
 </script>
 
