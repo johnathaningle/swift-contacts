@@ -1,5 +1,6 @@
 <template>
     <div>
+        <nav-component></nav-component>
         <authentication-form :formTitle="name">
             <div slot="fields">
                 <div class="form-group">
@@ -29,11 +30,14 @@
 </template>
 
 <script>
-    import AuthenticationForm from "../components/AuthenticationForm.vue";
+    import AuthenticationForm from "../components/Index/AuthenticationForm.vue";
+    import Nav from '../components/Index/Nav.vue';
     import AuthenticationService from "../services/AuthenticationService";
+    import "bootstrap/dist/css/bootstrap.min.css"
     export default {
         components: {
             AuthenticationForm,
+            NavComponent: Nav,
         },
         data() {
             return {
