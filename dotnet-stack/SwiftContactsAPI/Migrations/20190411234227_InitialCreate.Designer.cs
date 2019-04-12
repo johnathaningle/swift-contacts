@@ -9,14 +9,15 @@ using SwiftContactsAPI.Data;
 namespace SwiftContactsAPI.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20190411011657_AddedUserEntity")]
-    partial class AddedUserEntity
+    [Migration("20190411234227_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.1.8-servicing-32085");
+                .HasAnnotation("ProductVersion", "2.1.8-servicing-32085")
+                .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
             modelBuilder.Entity("SwiftContactsAPI.Models.User", b =>
                 {
@@ -27,21 +28,11 @@ namespace SwiftContactsAPI.Migrations
 
                     b.Property<byte[]>("PasswordSalt");
 
+                    b.Property<string>("Username");
+
                     b.HasKey("Id");
 
                     b.ToTable("Users");
-                });
-
-            modelBuilder.Entity("SwiftContactsAPI.Models.Value", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Name");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Values");
                 });
 #pragma warning restore 612, 618
         }
