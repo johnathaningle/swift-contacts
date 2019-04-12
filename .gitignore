@@ -10,3 +10,5 @@ node-backend/token.json
 
 tests
 *.json
+/dotnet-stack/.vs/SwiftContactsAPI/v16/Server/sqlite3/storage.ide-shm
+/dotnet-stack/.vs/SwiftContactsAPI/v16/Server/sqlite3/storage.ide-wal

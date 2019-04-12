@@ -13,16 +13,18 @@ namespace SwiftContactsAPI.Controllers
     [ApiController]
     public class AuthController : ControllerBase
     {
+        private readonly DataContext _context;
         private readonly IAuthRepository _repo;
         public AuthController(IAuthRepository repo)
         {
             _repo = repo;
         }
 
-        [HttpGet("register")]
+        [HttpGet]
         public IActionResult RegisterPage()
         {
-            return StatusCode(200);
+            string values = "hello world";
+            return Ok(values);
         }
 
         [HttpPost("register")]

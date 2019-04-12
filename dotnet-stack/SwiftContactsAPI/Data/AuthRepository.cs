@@ -63,9 +63,13 @@ namespace SwiftContactsAPI.Data
             }
         }
 
-        public Task<bool> UserExists(string username)
+        public async Task<bool> UserExists(string username)
         {
-            throw new NotImplementedException();
+            var user = await _context.Users.FirstOrDefaultAsync(x => x.Username == username);
+            if (user == null)
+                return false;
+
+            return true;
         }
     }
 }
