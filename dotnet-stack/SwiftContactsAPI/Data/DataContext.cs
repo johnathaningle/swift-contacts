@@ -11,6 +11,14 @@ namespace SwiftContactsAPI.Data
     {
         public DataContext(DbContextOptions<DataContext> options) : base(options) { }
         public DbSet<User> Users { get; set; }
+        public DbSet<UserEmail> UserEmails { get; set; }
         public DbSet<Value> Values { get; set; }
+        public DbSet<EmailTemplate> EmailTemplates { get; set; }
+        public DbSet<EmailTemplateType> EmailTemplateTypes { get; set; }
+        public DbSet<Email> Emails { get; set; }
+        public DbSet<EmailKeyword> EmailKeywords { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
+        public DbSet<UserEmailRecipient> UserEmailRecipients { get; set; }
+
     }
 }

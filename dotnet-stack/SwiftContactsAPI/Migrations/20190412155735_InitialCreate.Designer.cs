@@ -9,8 +9,8 @@ using SwiftContactsAPI.Data;
 namespace SwiftContactsAPI.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20190412014925_AddValues")]
-    partial class AddValues
+    [Migration("20190412155735_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -18,6 +18,38 @@ namespace SwiftContactsAPI.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "2.1.8-servicing-32085")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
+
+            modelBuilder.Entity("SwiftContactsAPI.Models.EmailTemplate", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Body");
+
+                    b.Property<string>("Description");
+
+                    b.Property<int?>("EmailTemplateTypeId");
+
+                    b.Property<string>("Name");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EmailTemplateTypeId");
+
+                    b.ToTable("EmailTemplates");
+                });
+
+            modelBuilder.Entity("SwiftContactsAPI.Models.EmailTemplateType", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("name");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("EmailTemplateTypes");
+                });
 
             modelBuilder.Entity("SwiftContactsAPI.Models.User", b =>
                 {
@@ -45,6 +77,13 @@ namespace SwiftContactsAPI.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Values");
+                });
+
+            modelBuilder.Entity("SwiftContactsAPI.Models.EmailTemplate", b =>
+                {
+                    b.HasOne("SwiftContactsAPI.Models.EmailTemplateType", "EmailTemplateType")
+                        .WithMany("EmailTemplates")
+                        .HasForeignKey("EmailTemplateTypeId");
                 });
 #pragma warning restore 612, 618
         }
