@@ -1,35 +1,32 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow">
   <a class="navbar-brand" href="#">Swift Contacts</a>
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="#">Contacts</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Emails</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Pipelines</a>
-      </li>
-      <li class="nav-item">
-        <a href="#" class="nav-link" (click)="logOut()">Logout</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Metrics</a>
-      </li>
-    </ul>
-    <div class="dropdown" *ngIf="loggedIn()">
-      <button class="btn btn-outline-secondary" type="button" id="dropdownMenuButton">
-        <i class="fa fa-gear"></i>
-      </button>
-      <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">Preferences</a>
-        <a class="dropdown-item" href="#">Accounts</a>
-        <a class="dropdown-item" href="#">Logout</a>
-      </div>
+  <ul class="navbar-nav mr-auto" *ngIf="loggedIn()">
+    <li class="nav-item">
+      <a class="nav-link" href="#">Contacts</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Emails</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Pipelines</a>
+    </li>
+    <li class="nav-item">
+      <a href="#" class="nav-link" >Logout</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Metrics</a>
+    </li>
+  </ul>
+  <div ngbDropdown class="d-inline-block" *ngIf="loggedIn()">
+    <button class="btn btn-light" id="dropdownBasic1" ngbDropdownToggle>
+      <i class="fa fa-gear"></i>
+    </button>
+    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+      <button ngbDropdownItem>Action - 1</button>
+      <button ngbDropdownItem>Another Action</button>
+      <button ngbDropdownItem>Something else is here</button>
     </div>
-    <form #loginForm="ngForm" class="form-inline my-2 my-lg-0" (ngSubmit)="login()" *ngIf="!loggedIn()">
-      <input class="form-control mr-sm-2" type="text" placeholder="Username" name="username" required [(ngModel)]="model.username">
-      <input class="form-control mr-sm-2" type="password" placeholder="Password" name="password" required [(ngModel)]="model.password">
-      <button [disabled]="!loginForm.valid" class="btn btn-success my-2 my-sm-0" type="submit">Login</button>
-    </form>
+    <button class="btn btn-light ml-3" (click)="logOut()">Logout</button>
+  </div>
+  
 </nav>
