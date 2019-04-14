@@ -9,6 +9,8 @@ namespace SwiftContactsAPI.Models
     {
         public int Id { get; set; }
         public string Subject { get; set; }
+        public string Body { get; set; }
+        public int? EmailTemplateId { get; set; }
         public EmailTemplate EmailTemplate { get; set; }
         public List<UserEmail> UserEmails { get; set; }
         public List<EmailKeyword> EmailKeywords { get; set; }
