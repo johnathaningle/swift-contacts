@@ -19,6 +19,8 @@ namespace SwiftContactsAPI.Controllers
             _context = context;
 
         }
+
+        [AllowAnonymous]
         // GET api/values
         [HttpGet]
         public IActionResult GetValues()
@@ -37,6 +39,7 @@ namespace SwiftContactsAPI.Controllers
             return Ok(value);
         }
 
+        [AllowAnonymous]
         // POST api/values
         [HttpPost]
         public void Post([FromBody] string value)
