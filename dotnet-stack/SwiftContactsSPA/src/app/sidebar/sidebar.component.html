@@ -1,0 +1,23 @@
+<aside>
+  <div class="menu-item-container" (click)="setActive($event)">
+    <div class="menu-item" id="Dashboard">
+        <i class="fa fa-home mx-auto" (click)="setActive($event)"></i>
+    </div>
+    <div class="menu-item" (click)="setActive($event)" id="Contacts">
+            <i class="fa fa-address-book mx-auto" (click)="setActive($event)"></i>
+    </div>
+    <div class="menu-item" (click)="setActive($event)" id="Messages">
+            <i class="fas fa-envelope mx-auto" (click)="setActive($event)"></i>
+    </div>
+    <div class="menu-item" (click)="setActive($event)" id="Pipelines">
+            <i class="fas fa-route mx-auto" (click)="setActive($event)"></i>
+    </div>
+    <div class="menu-item" (click)="setActive($event)" id="Metrics">
+        <i class="fas fa-chart-bar mx-auto" (click)="setActive($event)"></i>
+    </div>
+  </div>
+  <div class="menu-content-container">
+      <p class="pl-3 pt-3"> {{ activeIndex }}</p>
+      <hr class="bg-dark">
+  </div>
+</aside>
