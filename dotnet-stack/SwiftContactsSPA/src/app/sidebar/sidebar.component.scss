@@ -5,7 +5,7 @@ $menu-item-size: 55px;
 aside {
     background-color: #434745;
     color: white;
-    width: 270px;
+    width: $menu-items-col-width;
     height:100vh;
     min-height: 600px;
     display: -webkit-box;
