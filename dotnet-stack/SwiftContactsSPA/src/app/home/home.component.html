@@ -1,40 +1,43 @@
-<div class="card p-4 mx-auto shadow mt-5 text-center bg-white">
-    <div *ngIf="registerStatus">
-        <h3 class="mb-3">Sign Up</h3>
-        <hr>
-        <form class="text-left" #registerForm="ngForm" (ngSubmit)="register()">
-          <div class="form-group">
-            <label for="username">Username</label>
-            <input type="text" class="form-control" required name="username" [(ngModel)]="model.username">
+<app-nav></app-nav>
+<div class="container">
+    <div class="card p-4 mx-auto shadow mt-5 text-center bg-white">
+        <div *ngIf="registerStatus">
+            <h3 class="mb-3">Sign Up</h3>
+            <hr>
+            <form class="text-left" #registerForm="ngForm" (ngSubmit)="register()">
+              <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" required name="username" [(ngModel)]="model.username">
+              </div>
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" required name="password" [(ngModel)]="model.password">
+              </div>
+              <div class="form-group">
+                  <label for="passwordConfirm">Confirm Password</label>
+                  <input type="password" class="form-control" required name="passwordConfirm" [(ngModel)]="model.passwordConfirm">
+                </div>
+              <button class="btn btn-block btn-primary" (click)="register()">Sign Up</button>
+              <hr>
+              <p>Have an account? <a class="text-primary" (click)="registerToggle()">Login</a></p>
+            </form>
           </div>
-          <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" class="form-control" required name="password" [(ngModel)]="model.password">
-          </div>
-          <div class="form-group">
-              <label for="passwordConfirm">Confirm Password</label>
-              <input type="password" class="form-control" required name="passwordConfirm" [(ngModel)]="model.passwordConfirm">
-            </div>
-          <button class="btn btn-block btn-primary" (click)="register()">Sign Up</button>
+        <div *ngIf="!registerStatus">
+          <h3 class="mb-3">Sign In</h3>
           <hr>
-          <p>Have an account? <a href="#" (click)="registerToggle()">Login</a></p>
-        </form>
-      </div>
-    <div *ngIf="!registerStatus">
-      <h3 class="mb-3">Sign In</h3>
-      <hr>
-      <form class="text-left">
-        <div class="form-group">
-          <label for="username">Username</label>
-          <input type="text" class="form-control" required name="username" [(ngModel)]="model.username">
+          <form class="text-left">
+            <div class="form-group">
+              <label for="username">Username</label>
+              <input type="text" class="form-control" required name="username" [(ngModel)]="model.username">
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" required name="password" [(ngModel)]="model.password">
+            </div>
+            <button class="btn btn-block btn-primary" (click)="login()">Login</button>
+            <hr>
+            <p>Need an account? <a class="text-primary" (click)="registerToggle()">Register</a></p>
+          </form>
         </div>
-        <div class="form-group">
-          <label for="password">Password</label>
-          <input type="password" class="form-control" required name="password" [(ngModel)]="model.password">
-        </div>
-        <button class="btn btn-block btn-primary" (click)="login()">Login</button>
-        <hr>
-        <p>Need an account? <a href="#" (click)="registerToggle()">Register</a></p>
-      </form>
     </div>
 </div>
