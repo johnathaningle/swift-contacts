@@ -1,0 +1,9 @@
+<div class="card p-4 mt-4 shadow email" *ngFor="let email of emails">
+  <div class="row">
+    <div class="col-md-6">
+      <p class="email-subject"><strong>{{ email.subject }}</strong></p>
+    </div>
+  </div>
+  <hr>
+  <p class="email-paragraph" *ngFor="let line of email.body">{{ line }}</p>
+</div>

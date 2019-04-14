@@ -1,0 +1,24 @@
+.email {
+    overflow: hidden;
+    height: 80px;
+    transition: 0.3s;
+}
+
+.email:hover {
+    overflow: auto;
+    height: auto;
+    transition: 0.3s;
+}
+
+
+
+.email-subject {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.email-paragraph {
+    font-size: 13px;
+    padding: 1px 0px;
+    margin: 1px 0px;
+}
