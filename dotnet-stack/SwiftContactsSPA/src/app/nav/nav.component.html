@@ -1,32 +1,15 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-white shadow">
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
   <a class="navbar-brand" href="#">Swift Contacts</a>
-  <ul class="navbar-nav mr-auto" *ngIf="loggedIn()">
-    <li class="nav-item">
-      <a class="nav-link" href="#">Contacts</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Emails</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Pipelines</a>
-    </li>
-    <li class="nav-item">
-      <a href="#" class="nav-link" >Logout</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Metrics</a>
-    </li>
-  </ul>
-  <div ngbDropdown class="d-inline-block" *ngIf="loggedIn()">
-    <button class="btn btn-light" id="dropdownBasic1" ngbDropdownToggle>
+  <div ngbDropdown class="d-inline-block" *ngIf="loggedIn()" class="ml-auto">
+    <button class="btn btn-outline-dark" id="dropdownBasic1" ngbDropdownToggle>
       <i class="fa fa-gear"></i>
     </button>
-    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+    <div ngbDropdownMenu aria-labelledby="dropdownBasic1" >
       <button ngbDropdownItem>Action - 1</button>
       <button ngbDropdownItem>Another Action</button>
       <button ngbDropdownItem>Something else is here</button>
     </div>
-    <button class="btn btn-light ml-3" (click)="logOut()">Logout</button>
+    <button class="btn btn-outline-dark ml-3" (click)="logOut()">Logout</button>
   </div>
   
 </nav>
