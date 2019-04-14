@@ -68,12 +68,7 @@ namespace SwiftContactsAPI
             
             app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
             app.UseAuthentication();
-            app.UseMvc(routes =>
-            {
-                routes.MapRoute(
-                    name:"auth",
-                    template:"{controller=Auth}/{action=Index}/");
-            });
+            app.UseMvc();
             
         }
     }
