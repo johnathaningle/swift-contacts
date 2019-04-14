@@ -1,0 +1,10 @@
+<main>
+    <app-sidebar (menuEvent)="changeMenuEvent($event)"></app-sidebar>
+    <div class="dashboard-content">
+        <app-nav></app-nav>
+        <div class="container pt-3">
+            <app-dashboard-messages *ngIf="currentMenu == 'Messages'"></app-dashboard-messages>
+        </div>
+    </div>
+</main>
+      
