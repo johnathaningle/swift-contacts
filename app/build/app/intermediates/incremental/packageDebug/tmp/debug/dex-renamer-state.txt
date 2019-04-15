@@ -1,4 +1,0 @@
-#Thu Mar 14 16:31:41 EDT 2019
-base.0=C\:\\Users\\jingl\\Documents\\Code Projects\\swift-contacts\\app\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\0
-path.0=classes.dex
-renamed.0=classes.dex
