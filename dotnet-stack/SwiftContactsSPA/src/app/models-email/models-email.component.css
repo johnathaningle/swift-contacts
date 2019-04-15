@@ -6,7 +6,7 @@
 
 .email:hover {
     overflow: auto;
-    height: auto;
+    height: 300px;
     transition: 0.3s;
 }
 
